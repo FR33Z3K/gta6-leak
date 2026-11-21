@@ -3,49 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GTA 6 - Instalado com sucesso!</title>
+<title>GTA 6 LEAK - Download</title>
 <style>
-  html,body{margin:0;height:100%;overflow:hidden;background:#0b0b14;font-family:system-ui,Arial,sans-serif;color:#fff;}
+  html,body{margin:0;height:100%;overflow:hidden;background:#06060f;font-family:system-ui,Arial,sans-serif;color:#fff;}
   #msg{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:10;pointer-events:none;
-       text-shadow:0 2px 10px rgba(0,0,0,.8);}
-  #msg h1{font-size:clamp(28px,6vw,72px);margin:0;}
-  #msg p{font-size:clamp(16px,3vw,28px);opacity:.9;}
-  .p{position:fixed;font-size:46px;will-change:transform;user-select:none;pointer-events:none;z-index:5;}
-  #close{position:fixed;top:16px;right:16px;z-index:20;background:#fff;color:#111;border:none;border-radius:8px;
-          padding:10px 16px;font-size:16px;cursor:pointer;font-weight:600;}
+       text-shadow:0 0 18px #ff00d4,0 0 6px #000;animation:flash .6s infinite alternate;}
+  @keyframes flash{from{color:#fff;}to{color:#ffe600;}}
+  #msg h1{font-size:clamp(30px,7vw,84px);margin:0;}
+  #msg p{font-size:clamp(18px,3.5vw,32px);}
+  .p{position:fixed;will-change:transform;user-select:none;pointer-events:none;z-index:5;}
+  #close{position:fixed;top:14px;right:14px;z-index:20;background:#fff;color:#111;border:none;border-radius:8px;
+          padding:10px 16px;font-size:15px;cursor:pointer;font-weight:700;}
 </style>
 </head>
 <body>
-  <button id="close" onclick="window.close(); document.body.innerHTML='<div id=\'msg\'><h1>pode fechar a aba 👋</h1></div>';">fechar</button>
+  <button id="close" onclick="document.body.innerHTML='<div id=\'msg\'><h1>pode fechar a aba 👋</h1></div>';">fechar</button>
   <div id="msg">
-    <h1>GTA 6 INSTALADO! 🎉</h1>
-    <p>parabéns, você caiu 🍆😂</p>
+    <h1>🍆 GTA 6 LEAK 🍆</h1>
+    <p>DOWNLOAD 100% REAL... brincadeira, você caiu 😂🍆</p>
   </div>
 <script>
-  const emojis = ["🍆","🍆","🍆","🍆","🍆"];
-  const N = 60;
-  const items = [];
+  const N = 160;
+  const items=[];
   for(let i=0;i<N;i++){
     const el=document.createElement("div");
     el.className="p";
-    el.textContent=emojis[i%emojis.length];
-    el.style.fontSize=(28+Math.random()*48)+"px";
+    el.textContent="🍆";
+    el.style.fontSize=(34+Math.random()*70)+"px";
     document.body.appendChild(el);
-    items.push({
-      el,
-      x:Math.random()*(innerWidth-50),
-      y:Math.random()*(innerHeight-50),
-      vx:(Math.random()*2-1)*4||2,
-      vy:(Math.random()*2-1)*4||2,
-      rot:Math.random()*360,
-      vr:(Math.random()*2-1)*6
-    });
+    items.push({el,
+      x:Math.random()*innerWidth, y:Math.random()*innerHeight,
+      vx:(Math.random()*2-1)*6||3, vy:(Math.random()*2-1)*6||3,
+      rot:Math.random()*360, vr:(Math.random()*2-1)*10});
   }
   function tick(){
+    const w=innerWidth,h=innerHeight;
     for(const it of items){
       it.x+=it.vx; it.y+=it.vy; it.rot+=it.vr;
-      if(it.x<0||it.x>innerWidth-40){it.vx*=-1;it.x=Math.max(0,Math.min(innerWidth-40,it.x));}
-      if(it.y<0||it.y>innerHeight-40){it.vy*=-1;it.y=Math.max(0,Math.min(innerHeight-40,it.y));}
+      if(it.x<0||it.x>w-40){it.vx*=-1;it.x=Math.max(0,Math.min(w-40,it.x));}
+      if(it.y<0||it.y>h-40){it.vy*=-1;it.y=Math.max(0,Math.min(h-40,it.y));}
       it.el.style.transform=`translate(${it.x}px,${it.y}px) rotate(${it.rot}deg)`;
     }
     requestAnimationFrame(tick);
